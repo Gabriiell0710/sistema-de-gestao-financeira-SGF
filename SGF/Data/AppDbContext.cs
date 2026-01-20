@@ -10,7 +10,7 @@ namespace SGF.Data
 {
     public class AppDbContext : DbContext
     {
-        DbSet<UserModel> Users { get; set; }
+        public DbSet<UserModel> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
