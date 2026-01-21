@@ -31,10 +31,11 @@ namespace SGF.Repositories
                 .Where(u => u.Login == login && u.Password == password).FirstOrDefaultAsync();
         }
 
-        public async Task<UserModel> LoginExists(string login)
+        public async Task<bool> LoginExists(string login)
         {
-            return await _context.Users
+                await _context.Users
                 .Where(u => u.Login == login).FirstOrDefaultAsync();
+            return true;
         }
 
         public void Dispose()

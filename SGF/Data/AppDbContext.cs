@@ -14,15 +14,20 @@ namespace SGF.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string PastaApp = Path.Combine(
+            string pastaApp = Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
             "GestaoFinanceira"
             );
 
-            string CaminhoDb =
-            Path.Combine(PastaApp, "financeiro.db");
+            if (!Directory.Exists( pastaApp))
+            {
+                Directory.CreateDirectory( pastaApp );
+            }
 
-            optionsBuilder.UseSqlite( CaminhoDb );
+            string caminhoDb =
+            Path.Combine(pastaApp, "financeiro.db");
+
+            optionsBuilder.UseSqlite($"Data Source={caminhoDb}");
         }
     }
 }
