@@ -31,18 +31,18 @@ namespace SGF
                 return;
             }
             // Verification if user exists
-            Task<UserModel> loggedUser = _userService.GetUserByLogin(login, password);
+            var loggedUser = await _userService.GetUserByLogin(login, password);
 
-            UserModel userModel =  await loggedUser;
+           // UserModel userModel =  await loggedUser;
             
-            if(userModel == null)
+            if(loggedUser == null)
             {
                 MessageBox.Show("Usuário ou senha inválidos!");
                 return;
             }
 
             //Login OK
-            MessageBox.Show($"Bem-Vindo, {userModel.Name}");
+            MessageBox.Show($"Bem-Vindo, {loggedUser.Name}");
 
             this.Hide();
             // Code for open main form //

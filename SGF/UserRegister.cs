@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace SGF
 {
@@ -49,9 +50,9 @@ namespace SGF
                 return;
             }
 
-            var userRegistered = _userService.LoginExists(login);
+            var userRegistered = await _userService.LoginExists(login);
 
-            if (userRegistered != "" )
+            if (userRegistered)
             {
                 MessageBox.Show("O nome de usuário já existe!");
                 return;
@@ -59,11 +60,11 @@ namespace SGF
            
                 //Add New User
                  UserModel newUser = new UserModel
-                {
+                 {
                     Name = name,
                     Login = login,
                     Password = password
-                };
+                 };
 
                  await _userService.AddUser(newUser);
 

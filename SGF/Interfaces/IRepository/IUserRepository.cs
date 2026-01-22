@@ -11,7 +11,7 @@ namespace SGF.Interfaces.IRepository
     {
         Task AddUser(UserModel user);
         Task<UserModel> GetUserByLogin (string login, string password);
-        string LoginExists(string login);
+        Task<bool> LoginExists(string login);
 
     }
 }
