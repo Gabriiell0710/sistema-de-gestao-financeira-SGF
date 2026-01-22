@@ -11,6 +11,6 @@ namespace SGF.Interfaces.IService
     {
         Task AddUser(UserModel user);
         Task<UserModel> GetUserByLogin (string login, string password);
-        Task<bool> LoginExists(string login);
+        string LoginExists(string login);
     }
 }

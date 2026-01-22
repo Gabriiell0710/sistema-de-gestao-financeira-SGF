@@ -35,7 +35,7 @@ namespace SGF
 
             UserModel userModel =  await loggedUser;
             
-            if(loggedUser == null)
+            if(userModel == null)
             {
                 MessageBox.Show("Usuário ou senha inválidos!");
                 return;

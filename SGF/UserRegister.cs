@@ -22,6 +22,7 @@ namespace SGF
             _userService = userService;
 
             btnSave.Click += btnSave_Click;
+            btnCancel.Click += btnCancel_Click;
         }
 
         private async void btnSave_Click(object sender, EventArgs e)
@@ -39,35 +40,47 @@ namespace SGF
                 string.IsNullOrEmpty(passConfirm))
             {
                 MessageBox.Show("Preencha todos os campos!");
+                return;
             }
 
             if (password != passConfirm)
             {
                 MessageBox.Show("As senhas devem ser iguais!");
+                return;
             }
 
-            if (await _userService.LoginExists(login))
+            var userRegistered = _userService.LoginExists(login);
+
+            if (userRegistered != "" )
             {
                 MessageBox.Show("O nome de usuário já existe!");
+                return;
             }
+           
+                //Add New User
+                 UserModel newUser = new UserModel
+                {
+                    Name = name,
+                    Login = login,
+                    Password = password
+                };
 
-            //Add New User
-            UserModel newUser = new UserModel
-            {
-                Name = name,
-                Login = login,
-                Password = password
-            };
+                 await _userService.AddUser(newUser);
 
-            _userService.AddUser(newUser);
+                MessageBox.Show("Usuário criado com sucesso!");
 
-            MessageBox.Show("Usuário criado com sucesso!");
-
-            this.Close();
+                this.Close();
+            
+                
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            txtName.Text = "";
+            txtLogin.Text = "";
+            txtPassword.Text = "";
+            txtPassConfirm.Text = "";
+
             this.Close();
         }
     }

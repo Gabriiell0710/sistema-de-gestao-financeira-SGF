@@ -134,6 +134,7 @@
             txtPassword.PlaceholderText = "Senha";
             txtPassword.Size = new Size(150, 23);
             txtPassword.TabIndex = 8;
+            txtPassword.UseSystemPasswordChar = true;
             // 
             // txtPassConfirm
             // 
@@ -143,6 +144,7 @@
             txtPassConfirm.PlaceholderText = "Confirmar Senha";
             txtPassConfirm.Size = new Size(150, 23);
             txtPassConfirm.TabIndex = 9;
+            txtPassConfirm.UseSystemPasswordChar = true;
             // 
             // btnSave
             // 
@@ -188,7 +190,6 @@
             Controls.Add(labelName);
             Controls.Add(imgRegister);
             Controls.Add(labelTitle);
-            Cursor = Cursors.Default;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "UserRegister";

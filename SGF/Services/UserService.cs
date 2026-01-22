@@ -29,9 +29,9 @@ namespace SGF.Services
            return await _repository.GetUserByLogin(login, password);
         }
 
-        public async Task<bool> LoginExists(string login)
+        public string LoginExists(string login)
         {
-            return await _repository.LoginExists(login);
+            return _repository.LoginExists(login);
         }
 
         public void Dispose()

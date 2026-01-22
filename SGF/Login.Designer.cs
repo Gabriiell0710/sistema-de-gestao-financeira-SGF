@@ -104,6 +104,7 @@
             textPassword.PlaceholderText = "Senha";
             textPassword.Size = new Size(150, 23);
             textPassword.TabIndex = 5;
+            textPassword.UseSystemPasswordChar = true;
             // 
             // btnEntrer
             // 
