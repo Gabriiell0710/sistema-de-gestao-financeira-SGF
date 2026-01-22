@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGF.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,17 @@ namespace SGF
 {
     public partial class MainSreen : Form
     {
-        public MainSreen()
+        private UserModel _user;
+        public MainSreen(UserModel user)
         {
+            _user = user;
+
             InitializeComponent();
+
+            labelUser.Text = $"Usuário: {_user.Name}";
         }
 
+        
        
     }
 }

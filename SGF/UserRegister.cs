@@ -1,5 +1,7 @@
-﻿using SGF.Interfaces.IService;
+﻿using SGF.DTO;
+using SGF.Interfaces.IService;
 using SGF.Models;
+using SGF.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +18,7 @@ namespace SGF
     public partial class UserRegister : Form
     {
         private readonly IUserService _userService;
-
+       
         public UserRegister(IUserService userService)
         {
             InitializeComponent();
@@ -28,51 +30,20 @@ namespace SGF
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            string name = txtName.Text.Trim();
-            string login = txtLogin.Text.Trim();
-            string password = txtPassword.Text.Trim();
-            string passConfirm = txtPassConfirm.Text.Trim();
-
-
-            //Verification
-            if (string.IsNullOrEmpty(name) ||
-                string.IsNullOrEmpty(login) ||
-                string.IsNullOrEmpty(password) ||
-                string.IsNullOrEmpty(passConfirm))
+            UserDto userDto = new UserDto()
             {
-                MessageBox.Show("Preencha todos os campos!");
-                return;
-            }
+                Name = txtName.Text.Trim(),
+                Login = txtLogin.Text.Trim(),
+                Password = txtPassword.Text.Trim(),
+                PassConfirm = txtPassConfirm.Text.Trim()
+            };
 
-            if (password != passConfirm)
-            {
-                MessageBox.Show("As senhas devem ser iguais!");
-                return;
-            }
+                var newUser = _userService.UserValidation(userDto);
 
-            var userRegistered = await _userService.LoginExists(login);
+            if(newUser) this.Close();
 
-            if (userRegistered)
-            {
-                MessageBox.Show("O nome de usuário já existe!");
-                return;
-            }
-           
-                //Add New User
-                 UserModel newUser = new UserModel
-                 {
-                    Name = name,
-                    Login = login,
-                    Password = password
-                 };
 
-                 await _userService.AddUser(newUser);
 
-                MessageBox.Show("Usuário criado com sucesso!");
-
-                this.Close();
-            
-                
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -85,4 +56,6 @@ namespace SGF
             this.Close();
         }
     }
+
+
 }

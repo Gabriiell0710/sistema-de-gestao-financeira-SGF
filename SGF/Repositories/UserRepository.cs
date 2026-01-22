@@ -31,10 +31,10 @@ namespace SGF.Repositories
                 .Where(u => u.Login == login && u.Password == password).FirstOrDefaultAsync();
         }
 
-        public async Task<bool> LoginExists(string login)
+        public bool LoginExists(string login)
         {
-             var result =  await _context.Users
-                .Where(u => u.Login == login).FirstOrDefaultAsync();
+             var result =  _context.Users
+                .Where(u => u.Login == login).FirstOrDefault();
 
             if(result == null)
             {

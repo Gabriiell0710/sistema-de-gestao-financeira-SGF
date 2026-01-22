@@ -1,4 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
+using SGF.DTO;
 using SGF.Interfaces.IService;
 using SGF.Models;
 using SGF.Services;
@@ -9,7 +10,8 @@ namespace SGF
     {
         private readonly IUserService _userService;
         private readonly IServiceProvider _provider;
-       
+        
+        
         public Login(IUserService userService, IServiceProvider provider)
         {
             InitializeComponent();
@@ -22,31 +24,15 @@ namespace SGF
 
         public async void btnEnter_Click(object sender, EventArgs e)
         {
-            string login = textLogin.Text.Trim();
-            string password = textPassword.Text.Trim();
-
-            if(string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
+ 
+            UserLoginDto userLoginDto = new UserLoginDto()
             {
-                MessageBox.Show("Preencha o usuário e a senha!");
-                return;
-            }
-            // Verification if user exists
-            var loggedUser = await _userService.GetUserByLogin(login, password);
+                Login = textLogin.Text.Trim(),
+                Password = textPassword.Text.Trim(),
+            };
 
-           // UserModel userModel =  await loggedUser;
-            
-            if(loggedUser == null)
-            {
-                MessageBox.Show("Usuário ou senha inválidos!");
-                return;
-            }
-
-            //Login OK
-            MessageBox.Show($"Bem-Vindo, {loggedUser.Name}");
-
-            this.Hide();
-            // Code for open main form //
-        
+            _userService.UserLoginValidation(userLoginDto);
+          
         }   
 
         public async void btnRegister_Click(object sender, EventArgs e)

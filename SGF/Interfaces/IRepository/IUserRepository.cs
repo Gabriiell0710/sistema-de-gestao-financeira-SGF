@@ -1,4 +1,5 @@
-﻿using SGF.Models;
+﻿using SGF.DTO;
+using SGF.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,8 @@ namespace SGF.Interfaces.IRepository
     {
         Task AddUser(UserModel user);
         Task<UserModel> GetUserByLogin (string login, string password);
-        Task<bool> LoginExists(string login);
+        bool LoginExists(string login);
+      
 
     }
 }
