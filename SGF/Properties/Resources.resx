@@ -118,26 +118,32 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="add_despesa_75x75" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_despesa_75x75.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cadastro_despesa_75x75" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cadastro_despesa_75x75.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="graficos_75x75" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\graficos_75x75.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="add_receita_75x75" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_receita_75x75.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cadastro_receita_75x75" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cadastro_receita_75x75.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ajuda_75x75" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ajuda_75x75.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bg_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg_login.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ajuda_75x75" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ajuda_75x75.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cadastro_despesa_75x75" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cadastro_despesa_75x75.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add_despesa_75x75" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_despesa_75x75.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add_receita_75x75" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_receita_75x75.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="background_padrao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background_padrao.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sair_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sair_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="emitir_relatorio_75x75" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\emitir_relatorio_75x75.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="background_mainform" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background_mainform.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,13 +151,16 @@
   <data name="login_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\login_bg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background_mainform" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background_mainform.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="graficos_75x75" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\graficos_75x75.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="emitir_relatorio_75x75" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\emitir_relatorio_75x75.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cadastro_receita_75x75" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cadastro_receita_75x75.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sair_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sair_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cadastro_receita_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cadastro_receita_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="voltar_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voltar_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -237,7 +237,9 @@
             Controls.Add(labelHeader);
             Controls.Add(labelMenu);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "MainSreen";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MainSreen";
             ResumeLayout(false);
             PerformLayout();

@@ -11,6 +11,7 @@ namespace SGF.Data
     public class AppDbContext : DbContext
     {
         public DbSet<UserModel> Users { get; set; }
+        public DbSet<RevenueCategoryModel> RevenueCategory { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
