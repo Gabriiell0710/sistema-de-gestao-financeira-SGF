@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SGF.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SGF.Data.Mapping
 {
@@ -13,11 +8,17 @@ namespace SGF.Data.Mapping
     {
         public void Configure(EntityTypeBuilder<RevenueCategoryModel> builder)
         {
-            builder.HasKey(u => u.Id);
-            builder.Property(u => u.Name).HasMaxLength(100).IsRequired();
+            builder.HasKey(r => r.Id);
+            builder.Property(r => r.Name).HasMaxLength(100).IsRequired();
 
-            builder.HasOne(r => r.User).HasForeignKey
+            builder.HasOne(r => r.User)
+                .WithMany(u => u.RevenueCategory)
+                .HasForeignKey(r => r.UserId)
+                .IsRequired();
 
+            builder.HasMany(r => r.Revenues)
+                .WithOne(r => r.RevenueCategory)
+                .HasForeignKey(r => r.RevenueCategoryId);
 
 
 

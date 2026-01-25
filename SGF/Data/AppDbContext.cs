@@ -12,6 +12,11 @@ namespace SGF.Data
     {
         public DbSet<UserModel> Users { get; set; }
         public DbSet<RevenueCategoryModel> RevenueCategory { get; set; }
+        public DbSet<ExpenseCategoryModel> ExpenseCategory { get; set; }
+        public DbSet<RevenuesModel> Revenues { get; set; }
+        public DbSet<ExpensesModel> Expenses { get; set; }
+
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

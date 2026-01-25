@@ -17,6 +17,14 @@ namespace SGF.Data.Mapping
             builder.Property(u => u.Name).IsRequired().HasMaxLength(150);
             builder.Property(u => u.Login).IsRequired().HasMaxLength(100);
             builder.Property(u => u.Password).IsRequired().HasMaxLength(2000);
+
+            builder.HasMany(u => u.RevenueCategory)
+                .WithOne(r => r.User)
+                .HasForeignKey(r => r.UserId);
+
+            builder.HasMany(u => u.ExpenseCategory)
+                .WithOne(e => e.User)
+                .HasForeignKey(e => e.UserId);
         }
     }
 }

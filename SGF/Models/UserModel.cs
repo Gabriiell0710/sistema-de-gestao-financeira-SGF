@@ -12,5 +12,12 @@ namespace SGF.Models
         public string Name { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
+
+        public List<RevenueCategoryModel> RevenueCategory { get; set; }
+        public List<ExpenseCategoryModel> ExpenseCategory { get; set; }
+
+        public List<RevenuesModel> Revenues { get; set; }
+        public List<ExpensesModel> Expenses { get; set; }
+
     }
 }
