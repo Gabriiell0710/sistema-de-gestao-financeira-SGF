@@ -11,10 +11,10 @@ namespace SGF.Data
     public class AppDbContext : DbContext
     {
         public DbSet<UserModel> Users { get; set; }
-        public DbSet<RevenueCategoryModel> RevenueCategory { get; set; }
-        public DbSet<ExpenseCategoryModel> ExpenseCategory { get; set; }
-        public DbSet<RevenuesModel> Revenues { get; set; }
-        public DbSet<ExpensesModel> Expenses { get; set; }
+        public DbSet<RevenueCategoryModel> RevenueCategories { get; set; }
+        public DbSet<ExpenseCategoryModel> ExpenseCategories { get; set; }
+        public DbSet<RevenueModel> Revenues { get; set; }
+        public DbSet<ExpenseModel> Expenses { get; set; }
 
 
 

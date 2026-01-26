@@ -1,6 +1,6 @@
 ﻿namespace SGF
 {
-    partial class RegisterRevenue
+    partial class RevenueRegister
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterRevenue));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RevenueRegister));
             labelMenu = new Label();
             labelHeader = new Label();
             label1 = new Label();

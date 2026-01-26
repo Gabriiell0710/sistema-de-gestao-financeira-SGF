@@ -1,8 +1,10 @@
-﻿using Microsoft.VisualBasic.Logging;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.VisualBasic.Logging;
 using SGF.DTO;
 using SGF.Interfaces.IRepository;
 using SGF.Interfaces.IService;
 using SGF.Models;
+using SGF.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,10 +18,14 @@ namespace SGF.Services
     {
 
         private readonly IUserRepository _repository;
+        private readonly IServiceProvider _provider;
+        private UserSession _userSession;
 
-        public UserService(IUserRepository repository)
+        public UserService(IUserRepository repository, IServiceProvider provider, UserSession userSession)
         {
             _repository = repository;
+            _provider = provider;
+            _userSession = userSession;
         }
 
         public async Task AddUser(UserModel user)
@@ -78,8 +84,11 @@ namespace SGF.Services
 
             MessageBox.Show("Usuário criado com sucesso!");
 
+            var session = _provider.GetRequiredService<UserSession>();
+            session.Login(newUser);
+
             CloseForm("Login");
-            MainSreen mainScreen = new MainSreen(newUser);
+            MainSreen mainScreen = new MainSreen(_userSession, _provider);
             mainScreen.Show();
             
 
@@ -114,9 +123,12 @@ namespace SGF.Services
                 return;
             }
 
+            var session = _provider.GetRequiredService<UserSession>();
+            session.Login(loggedUser);
+
             MessageBox.Show($"Bem-Vindo, {loggedUser.Name}");
             CloseForm("Login");
-            MainSreen mainScreen = new MainSreen(loggedUser);
+            MainSreen mainScreen = new MainSreen(_userSession, _provider);
             mainScreen.Show();
         }
     }

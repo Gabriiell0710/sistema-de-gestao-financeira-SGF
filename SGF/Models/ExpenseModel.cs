@@ -1,6 +1,6 @@
 ﻿namespace SGF.Models
 {
-    public  class ExpensesModel
+    public  class ExpenseModel
     {
         public int Id { get; set; }
         public string Name { get; set; }

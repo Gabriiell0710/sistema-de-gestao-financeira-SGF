@@ -3,6 +3,7 @@ using SGF.DTO;
 using SGF.Interfaces.IService;
 using SGF.Models;
 using SGF.Services;
+using SGF.Utils;
 
 namespace SGF
 {
@@ -10,14 +11,16 @@ namespace SGF
     {
         private readonly IUserService _userService;
         private readonly IServiceProvider _provider;
+        private UserSession _userSession;
         
         
-        public Login(IUserService userService, IServiceProvider provider)
+        public Login(IUserService userService, IServiceProvider provider, UserSession userSession)
         {
             InitializeComponent();
 
             _userService = userService;
             _provider = provider;
+            _userSession = userSession;
             btnEntrer.Click += btnEnter_Click;
             btnRegister.Click += btnRegister_Click;
         }

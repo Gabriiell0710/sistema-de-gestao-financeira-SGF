@@ -14,11 +14,7 @@ namespace SGF.Data.Mapping
             builder.HasOne(e => e.User)
                 .WithMany(u => u.ExpenseCategory)
                 .HasForeignKey(e => e.UserId)
-                .IsRequired();
-
-            builder.HasMany(e => e.Expenses)
-                .WithOne(e => e.ExpenseCategory)
-                .HasForeignKey(e => e.ExpenseCategoryId);
+                .IsRequired();          
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace SGF.Models
 {
-    public class RevenuesModel
+    public class RevenueModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
