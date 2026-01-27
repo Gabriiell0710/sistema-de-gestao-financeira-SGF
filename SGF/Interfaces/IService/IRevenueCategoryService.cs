@@ -11,5 +11,6 @@ namespace SGF.Interfaces.IService
         Task Update(RevenueCategoryDto revenueDto);
         Task Delete(int id);
         Task RevenueCategoryValidation(RevenueCategoryDto revenueDto);
+        void IdRevenueSelected(int id);
     }
 }

@@ -89,6 +89,7 @@
             // btnSave
             // 
             btnSave.BackColor = Color.DarkGreen;
+            btnSave.Cursor = Cursors.Hand;
             btnSave.Font = new Font("Roboto", 15F, FontStyle.Bold);
             btnSave.ForeColor = SystemColors.Control;
             btnSave.Location = new Point(194, 260);
@@ -121,6 +122,7 @@
             // btnEdit
             // 
             btnEdit.BackColor = Color.DarkOrange;
+            btnEdit.Cursor = Cursors.Hand;
             btnEdit.Font = new Font("Roboto", 15F, FontStyle.Bold);
             btnEdit.ForeColor = SystemColors.Control;
             btnEdit.Location = new Point(834, 518);
@@ -133,6 +135,7 @@
             // btnDelete
             // 
             btnDelete.BackColor = Color.DarkRed;
+            btnDelete.Cursor = Cursors.Hand;
             btnDelete.Font = new Font("Roboto", 15F, FontStyle.Bold);
             btnDelete.ForeColor = SystemColors.Control;
             btnDelete.Location = new Point(1020, 518);
@@ -144,6 +147,7 @@
             // 
             // btnBack
             // 
+            btnBack.Cursor = Cursors.Hand;
             btnBack.Font = new Font("Roboto", 9F, FontStyle.Bold);
             btnBack.Image = Properties.Resources.voltar_50x50;
             btnBack.Location = new Point(1163, 523);
@@ -154,7 +158,7 @@
             btnBack.TextAlign = ContentAlignment.BottomCenter;
             btnBack.UseVisualStyleBackColor = true;
             // 
-            // RegisterRevenue
+            // RevenueRegister
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -171,10 +175,9 @@
             Controls.Add(label1);
             Controls.Add(labelHeader);
             Controls.Add(labelMenu);
-            Cursor = Cursors.Hand;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            Name = "RegisterRevenue";
+            Name = "RevenueRegister";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro Receita";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

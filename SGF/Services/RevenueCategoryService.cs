@@ -9,6 +9,7 @@ namespace SGF.Services
     public class RevenueCategoryService : IRevenueCategoryService
     {
         private readonly IRevenueCategoryRepository _repository;
+        private int _idSelected = 0; 
 
         public RevenueCategoryService(IRevenueCategoryRepository repository)
         {
@@ -31,9 +32,9 @@ namespace SGF.Services
 
         public async Task Update(RevenueCategoryDto revenueDto)
         {
-            var revenue = await _repository.GetById(revenueDto.Id);
+            /*var revenue = await _repository.GetById(revenueDto.Id);
             revenue.Name = revenueDto.Name;
-            await _repository.Update(revenue);
+            await _repository.Update(revenue);*/
         }
 
         public async Task Delete(int id)
@@ -49,30 +50,36 @@ namespace SGF.Services
                 MessageBox.Show("O nome não pode estar vazio");
             }
 
-            if (dto.Id == 0)
+            if (_idSelected == 0)
             {
-                //var revenue = await _repository.GetById(dto.Id);
-                RevenueCategoryModel revenue = new RevenueCategoryModel();
-                revenue.Name = dto.Name;
-                revenue.UserId = dto.UserId;
-                 await _repository.Add(revenue);
+
+                var revenue = new RevenueCategoryModel
+                {
+                    Name = dto.Name,
+                    UserId = dto.UserId,
+                };
+
+                await _repository.Add(revenue);
             }
             else
             {
-                RevenueCategoryModel revenue = new();
+                var revenue = await _repository.GetById(_idSelected);
+
                 revenue.Name = dto.Name;
-                revenue.Id = dto.Id;
-                revenue.UserId = dto.UserId;
+
                 await _repository.Update(revenue);
             }
 
             dto.Name = "";
             dto.Id = 0;
         }
+        public void IdRevenueSelected(int id)
+        {
+            _idSelected = id;
+        }
 
         public void Dispose() => _repository.Dispose();
         
-
 
     }
 }

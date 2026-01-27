@@ -27,6 +27,7 @@ namespace SGF
 
             Load += RevenueCategori_Load;
             btnSave.Click += btnSave_Click;
+            btnEdit.Click += btnEdit_Click;
             
         }
         
@@ -39,12 +40,17 @@ namespace SGF
         {
             dgvRevenue.DataSource = null;
             dgvRevenue.DataSource = await _service.ListByUser(_loggedUser.Id);
+            dgvRevenue.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            
 
             dgvRevenue.Columns["Id"].Visible = false;
             dgvRevenue.Columns["UserId"].Visible = false;
             dgvRevenue.Columns["User"].Visible = false;
-            dgvRevenue.Columns["Name"].HeaderText = "Receitas";
+            dgvRevenue.Columns["Name"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter; 
+            dgvRevenue.Columns["Name"].HeaderText = "Receitas".ToUpper();
             dgvRevenue.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            
         }
 
         private async void btnSave_Click(object sender, EventArgs e)
@@ -56,8 +62,19 @@ namespace SGF
             };
 
             await _service.RevenueCategoryValidation(revenueCatDto);
-
+            txtRegisterRevenue.Text = null;
              GridLoad();
+        }
+
+        private async void btnEdit_Click(object sender, EventArgs e)
+        {
+
+            if (dgvRevenue.CurrentRow == null) return;
+
+            var revenue = (RevenueCategoryModel) dgvRevenue.CurrentRow.DataBoundItem;
+            txtRegisterRevenue.Text = revenue.Name;
+            _service.IdRevenueSelected(revenue.Id);
+
         }
     }
 }

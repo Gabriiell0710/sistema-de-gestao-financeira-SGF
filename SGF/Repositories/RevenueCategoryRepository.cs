@@ -35,12 +35,14 @@ namespace SGF.Repositories
             var list = await _context.RevenueCategories
                 .Where(x => x.UserId == userId).ToListAsync();
             return list;
+
         }
 
 
         public async Task Update(RevenueCategoryModel revenue)
         {
                _context.RevenueCategories.Update(revenue);
+            await _context.SaveChangesAsync();
         }
 
 
