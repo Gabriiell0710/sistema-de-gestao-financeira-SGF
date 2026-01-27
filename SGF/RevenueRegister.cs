@@ -28,6 +28,7 @@ namespace SGF
             Load += RevenueCategori_Load;
             btnSave.Click += btnSave_Click;
             btnEdit.Click += btnEdit_Click;
+            btnDelete.Click += btnDelete_Click;
             
         }
         
@@ -73,8 +74,21 @@ namespace SGF
 
             var revenue = (RevenueCategoryModel) dgvRevenue.CurrentRow.DataBoundItem;
             txtRegisterRevenue.Text = revenue.Name;
-            _service.IdRevenueSelected(revenue.Id);
+              _service.IdRevenueSelected(revenue.Id);
 
+        }
+
+        private async void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvRevenue.CurrentRow == null) return;
+
+            var revenue = (RevenueCategoryModel)dgvRevenue.CurrentRow.DataBoundItem;
+
+            if (MessageBox.Show("Deseja Excluir?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                await _service.Delete(revenue.Id);
+                GridLoad();
+            }
         }
     }
 }

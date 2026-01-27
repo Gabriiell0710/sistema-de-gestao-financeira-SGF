@@ -49,6 +49,7 @@ namespace SGF.Repositories
         public async Task Delete(RevenueCategoryModel revenue)
         {
             _context.RevenueCategories.Remove(revenue);
+            await _context.SaveChangesAsync();
         }
 
 

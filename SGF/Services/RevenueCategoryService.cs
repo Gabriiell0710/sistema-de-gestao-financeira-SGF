@@ -75,7 +75,7 @@ namespace SGF.Services
         }
         public void IdRevenueSelected(int id)
         {
-            _idSelected = id;
+             _idSelected = id;
         }
 
         public void Dispose() => _repository.Dispose();
