@@ -51,8 +51,10 @@ namespace SGF.Services
 
             if (dto.Id == 0)
             {
-                var revenue = await _repository.GetById(dto.Id);
+                //var revenue = await _repository.GetById(dto.Id);
+                RevenueCategoryModel revenue = new RevenueCategoryModel();
                 revenue.Name = dto.Name;
+                revenue.UserId = dto.UserId;
                  await _repository.Add(revenue);
             }
             else

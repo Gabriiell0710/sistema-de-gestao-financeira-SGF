@@ -25,26 +25,29 @@ namespace SGF
             _loggedUser = userSession.User;
             InitializeComponent();
 
+            Load += RevenueCategori_Load;
             btnSave.Click += btnSave_Click;
             
         }
         
-        public void RevenueCategori_Load(object sender, EventArgs e)
+        private async void RevenueCategori_Load(object sender, EventArgs e)
         {
             GridLoad();
         }
         
-        public void GridLoad()
+        private async void GridLoad()
         {
             dgvRevenue.DataSource = null;
-            dgvRevenue.DataSource = _service.ListByUser(_loggedUser.Id);
+            dgvRevenue.DataSource = await _service.ListByUser(_loggedUser.Id);
 
             dgvRevenue.Columns["Id"].Visible = false;
             dgvRevenue.Columns["UserId"].Visible = false;
+            dgvRevenue.Columns["User"].Visible = false;
+            dgvRevenue.Columns["Name"].HeaderText = "Receitas";
             dgvRevenue.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
-        public void btnSave_Click(object sender, EventArgs e)
+        private async void btnSave_Click(object sender, EventArgs e)
         {
             RevenueCategoryDto revenueCatDto = new RevenueCategoryDto()
             {
@@ -52,9 +55,9 @@ namespace SGF
                 UserId = _loggedUser.Id,
             };
 
-            _service.RevenueCategoryValidation(revenueCatDto);
+            await _service.RevenueCategoryValidation(revenueCatDto);
 
-            GridLoad();
+             GridLoad();
         }
     }
 }
