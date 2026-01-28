@@ -29,6 +29,7 @@ namespace SGF
             btnSave.Click += btnSave_Click;
             btnEdit.Click += btnEdit_Click;
             btnDelete.Click += btnDelete_Click;
+            btnBack.Click += btnBack_Click;
             
         }
         
@@ -89,6 +90,11 @@ namespace SGF
                 await _service.Delete(revenue.Id);
                 GridLoad();
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

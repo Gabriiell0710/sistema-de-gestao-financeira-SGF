@@ -73,6 +73,7 @@ namespace SGF.Services
             dto.Name = "";
             dto.Id = 0;
         }
+
         public void IdRevenueSelected(int id)
         {
              _idSelected = id;

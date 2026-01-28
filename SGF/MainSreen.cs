@@ -36,7 +36,10 @@ namespace SGF
 
             RevenueRegister revenueRegisterForm = new RevenueRegister(revenueService, _user);
 
+            this.Hide();
             revenueRegisterForm.ShowDialog();
+            this.Show();
+
         }
 
 
