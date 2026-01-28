@@ -1,5 +1,4 @@
-﻿using SGF.DTO;
-using SGF.Models;
+﻿using SGF.Models;
 
 namespace SGF.Interfaces.IRepository
 {
