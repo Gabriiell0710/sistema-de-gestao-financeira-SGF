@@ -37,11 +37,6 @@ namespace SGF.Services
             await _repository.Update(revenue);*/
         }
 
-        public async Task Delete(int id)
-        {
-            var revenue = await _repository.GetById(id);
-            await _repository.Delete(revenue);
-        }
 
         public async Task RevenueCategoryValidation(RevenueCategoryDto dto)
         {
@@ -71,7 +66,7 @@ namespace SGF.Services
             }
 
             dto.Name = "";
-            dto.Id = 0;
+            _idSelected = 0;
         }
 
         public void IdRevenueSelected(int id)
@@ -79,6 +74,11 @@ namespace SGF.Services
              _idSelected = id;
         }
 
+        public async Task Delete(int id)
+        {
+            var revenue = await _repository.GetById(id);
+            await _repository.Delete(revenue);
+        }
         public void Dispose() => _repository.Dispose();
         
 
