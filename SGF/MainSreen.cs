@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using SGF.Interfaces.IRepository;
 using SGF.Interfaces.IService;
 using SGF.Models;
 using SGF.Utils;
@@ -28,9 +29,10 @@ namespace SGF
             labelUser.Text = $"Usuário: {_user.User.Name}";
 
             btnRegisterRevenue.Click += btnRegisterRevenue_Click;
+            btnRegisterExpense.Click += btnRegisterExpense_Click;
         }
 
-        public void btnRegisterRevenue_Click(object sender, EventArgs e)
+        private void btnRegisterRevenue_Click(object sender, EventArgs e)
         {
             var revenueService = _provider.GetRequiredService<IRevenueCategoryService>();
 
@@ -40,6 +42,17 @@ namespace SGF
             revenueRegisterForm.ShowDialog();
             this.Show();
 
+        }
+
+        private void btnRegisterExpense_Click(object sender, EventArgs e)
+        {
+            var expenseService = _provider.GetRequiredService<IExpenseCategoryService>();
+
+            ExpenseRegister expenseRegisterForm = new ExpenseRegister(expenseService, _user);
+
+            this.Hide();
+            expenseRegisterForm.ShowDialog();
+            this.Show();
         }
 
 

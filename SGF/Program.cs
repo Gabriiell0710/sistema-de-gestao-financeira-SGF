@@ -22,9 +22,12 @@ namespace SGF
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IRevenueCategoryRepository, RevenueCategoryRepository>();
             services.AddScoped<IRevenueCategoryService, RevenueCategoryService>();
+            services.AddScoped<IExpenseCategoryRepository, ExpenseCategoryRepository>();
+            services.AddScoped<IExpenseCategoryService, ExpenseCategoryService>();
             services.AddScoped<Login>();
             services.AddScoped<UserRegister>();
             services.AddScoped<RevenueRegister>();
+            services.AddScoped<ExpenseRegister>();
             services.AddSingleton<UserSession>();
 
             var provider = services.BuildServiceProvider();
