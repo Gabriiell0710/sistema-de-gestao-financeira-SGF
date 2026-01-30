@@ -9,8 +9,8 @@ namespace SGF.Data.Mapping
         public void Configure(EntityTypeBuilder<ExpenseModel> builder)
         {
             builder.HasKey(e => e.Id);
-            builder.Property(e => e.Name).HasMaxLength(100).IsRequired();
             builder.Property(e => e.Description).HasMaxLength(250).IsRequired();
+            builder.Property(e => e.Value).HasMaxLength(50).IsRequired();
             builder.Property(e => e.Date).IsRequired();
 
 

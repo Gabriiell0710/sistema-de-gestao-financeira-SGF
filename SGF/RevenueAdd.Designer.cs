@@ -254,7 +254,7 @@
             MaximizeBox = false;
             Name = "RevenueAdd";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "RevenueAdd";
+            Text = "Entrada Receita";
             ((System.ComponentModel.ISupportInitialize)numValue).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvRevenues).EndInit();
             ResumeLayout(false);
