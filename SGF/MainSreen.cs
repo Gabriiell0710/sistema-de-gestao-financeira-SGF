@@ -28,11 +28,12 @@ namespace SGF
 
             labelUser.Text = $"Usuário: {_user.User.Name}";
 
-            btnRegisterRevenue.Click += btnRegisterRevenue_Click;
-            btnRegisterExpense.Click += btnRegisterExpense_Click;
+            btnRegisterRevenue.Click += BtnRegisterRevenue_Click;
+            btnRegisterExpense.Click += BtnRegisterExpense_Click;
+            btnAddRevenue.Click += BtnAddRevenue_Click;
         }
 
-        private void btnRegisterRevenue_Click(object sender, EventArgs e)
+        private void BtnRegisterRevenue_Click(object sender, EventArgs e)
         {
             var revenueService = _provider.GetRequiredService<IRevenueCategoryService>();
 
@@ -44,7 +45,7 @@ namespace SGF
 
         }
 
-        private void btnRegisterExpense_Click(object sender, EventArgs e)
+        private void BtnRegisterExpense_Click(object sender, EventArgs e)
         {
             var expenseService = _provider.GetRequiredService<IExpenseCategoryService>();
 
@@ -53,6 +54,19 @@ namespace SGF
             this.Hide();
             expenseRegisterForm.ShowDialog();
             this.Show();
+        }
+
+        private void BtnAddRevenue_Click(object sender, EventArgs e)
+        {
+            var revenueService = _provider.GetRequiredService<RevenueAdd>();
+            //var catRevenue = new RevenueCategoryModel();
+            //RevenueAdd revenueAddForm = new RevenueAdd(revenueService, _user);
+
+            this.Hide();
+            revenueService.ShowDialog();
+            this.Show();
+
+
         }
 
 

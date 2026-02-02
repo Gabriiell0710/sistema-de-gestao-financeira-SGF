@@ -24,10 +24,13 @@ namespace SGF
             services.AddScoped<IRevenueCategoryService, RevenueCategoryService>();
             services.AddScoped<IExpenseCategoryRepository, ExpenseCategoryRepository>();
             services.AddScoped<IExpenseCategoryService, ExpenseCategoryService>();
+            services.AddScoped<IRevenueRepository, RevenueRepository>();
+            services.AddScoped<IRevenueService, RevenueService>();
             services.AddScoped<Login>();
             services.AddScoped<UserRegister>();
             services.AddScoped<RevenueRegister>();
             services.AddScoped<ExpenseRegister>();
+            services.AddScoped<RevenueAdd>();
             services.AddSingleton<UserSession>();
 
             var provider = services.BuildServiceProvider();
