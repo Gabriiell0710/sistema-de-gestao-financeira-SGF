@@ -31,7 +31,7 @@ namespace SGF
             GridLoad();
 
             boxRevenueCategory.DataSource =
-                _catService.ListByUser(_loggedUser.Id);
+               await _catService.ListByUser(_loggedUser.Id);
             boxRevenueCategory.DisplayMember = "Name";
             boxRevenueCategory.ValueMember = "Id";
         }
@@ -39,13 +39,16 @@ namespace SGF
         private async void GridLoad()
         {
             dgvRevenues.DataSource = null;
-            dgvRevenues.DataSource = _catService.ListByUser(_loggedUser.Id);
+            dgvRevenues.DataSource = await _service.ListByUser(_loggedUser.Id);
             dgvRevenues.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            //dgvRevenues.Columns["Id"].Visible = false;
-            //dgvRevenues.Columns["RevenueCategoryId"].Visible = false;
-            //dgvRevenues.Columns["Description"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-           // dgvRevenues.Columns["Description"].HeaderText = "Receitas".ToUpper();
+            dgvRevenues.Columns["Id"].Visible = false;
+            dgvRevenues.Columns["RevenueCategoryId"].Visible = false;
+            dgvRevenues.Columns["RevenueCategory"].Visible = false;
+            dgvRevenues.Columns["Description"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvRevenues.Columns["Description"].HeaderText = "Descrição".ToUpper();
+            dgvRevenues.Columns["Value"].HeaderText = "Valor".ToUpper();
+            dgvRevenues.Columns["Date"].HeaderText = "Data".ToUpper();
             dgvRevenues.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
@@ -61,7 +64,7 @@ namespace SGF
             };
 
             await _service.RevenueValidation(revenueDto);
-            GridLoad();
+             GridLoad();
         }
     
         private async void BtnEdit_Click(object sender, EventArgs e)
@@ -72,8 +75,8 @@ namespace SGF
             txtDescription.Text = revenue.Description;
             numValue.Value = revenue.Value;
             dtDate.Value = revenue.Date;
-            boxRevenueCategory.ValueMember = revenue.RevenueCategoryId.ToString();
-             _service.IdRevenueSelected(revenue.Id);
+            boxRevenueCategory.SelectedValue = revenue.RevenueCategoryId;
+            _service.IdRevenueSelected(revenue.Id);
         }
     
         private async void BtnDelete_Click(object sender, EventArgs e)
