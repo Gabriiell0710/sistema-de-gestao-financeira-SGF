@@ -31,6 +31,7 @@ namespace SGF
             btnRegisterRevenue.Click += BtnRegisterRevenue_Click;
             btnRegisterExpense.Click += BtnRegisterExpense_Click;
             btnAddRevenue.Click += BtnAddRevenue_Click;
+            btnAddExpense.Click += BtnAddExpense_Click;
         }
 
         private void BtnRegisterRevenue_Click(object sender, EventArgs e)
@@ -59,14 +60,20 @@ namespace SGF
         private void BtnAddRevenue_Click(object sender, EventArgs e)
         {
             var revenueService = _provider.GetRequiredService<RevenueAdd>();
-            //var catRevenue = new RevenueCategoryModel();
-            //RevenueAdd revenueAddForm = new RevenueAdd(revenueService, _user);
-
+           
             this.Hide();
             revenueService.ShowDialog();
             this.Show();
 
+        }
 
+        private void BtnAddExpense_Click(Object sender, EventArgs e)
+        {
+            var expenseService = _provider.GetRequiredService<ExpenseAdd>();
+
+            this.Hide();
+            expenseService.ShowDialog();
+            this.Show();
         }
 
 

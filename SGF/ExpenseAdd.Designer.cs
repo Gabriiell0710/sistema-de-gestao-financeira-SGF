@@ -250,7 +250,7 @@
             Controls.Add(labelRevenueAdd);
             Controls.Add(labelHeader);
             Controls.Add(labelMenu);
-            Cursor = Cursors.PanWest;
+            Cursor = Cursors.Default;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "ExpenseAdd";
