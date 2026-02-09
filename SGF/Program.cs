@@ -24,6 +24,7 @@ namespace SGF
             services.AddScoped<IExpenseCategoryRepository, ExpenseCategoryRepository>();
             services.AddScoped<IRevenueRepository, RevenueRepository>();
             services.AddScoped<IExpenseRepository, ExpenseRepository>();
+            services.AddScoped<IExtractReportRepository, ExtractReportRepository>();
             //Service
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IRevenueCategoryService, RevenueCategoryService>();
