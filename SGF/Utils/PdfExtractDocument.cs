@@ -16,12 +16,12 @@ namespace SGF.Utils
 
         public PdfExtractDocument(
             List<ExtractReportDto> data,
-            UserSession user,
+            UserModel user,
             DateTime start,
             DateTime end)
         {
             _data = data;
-            _user = user.User;
+            _user = user;
             _start = start;
             _end = end;
         }

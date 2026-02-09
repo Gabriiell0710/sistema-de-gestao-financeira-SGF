@@ -1,4 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
+using QuestPDF.Infrastructure;
 using SGF.Data;
 using SGF.Interfaces.IRepository;
 using SGF.Interfaces.IService;
@@ -18,6 +19,7 @@ namespace SGF
         var services = new ServiceCollection();
 
             services.AddDbContext<AppDbContext>();
+            QuestPDF.Settings.License = LicenseType.Community;
             //Repository
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IRevenueCategoryRepository, RevenueCategoryRepository>();
@@ -38,6 +40,7 @@ namespace SGF
             services.AddScoped<ExpenseRegister>();
             services.AddScoped<RevenueAdd>();
             services.AddScoped<ExpenseAdd>();
+            services.AddScoped<Report>();
             services.AddSingleton<UserSession>();
 
             var provider = services.BuildServiceProvider();

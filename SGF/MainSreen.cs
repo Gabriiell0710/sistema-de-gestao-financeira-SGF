@@ -32,6 +32,7 @@ namespace SGF
             btnRegisterExpense.Click += BtnRegisterExpense_Click;
             btnAddRevenue.Click += BtnAddRevenue_Click;
             btnAddExpense.Click += BtnAddExpense_Click;
+            btnReport.Click += BtnReport_Click;
         }
 
         private void BtnRegisterRevenue_Click(object sender, EventArgs e)
@@ -70,6 +71,15 @@ namespace SGF
         private void BtnAddExpense_Click(Object sender, EventArgs e)
         {
             var expenseService = _provider.GetRequiredService<ExpenseAdd>();
+
+            this.Hide();
+            expenseService.ShowDialog();
+            this.Show();
+        }
+
+        private void BtnReport_Click(object sender, EventArgs e)
+        {
+            var expenseService = _provider.GetRequiredService<Report>();
 
             this.Hide();
             expenseService.ShowDialog();
