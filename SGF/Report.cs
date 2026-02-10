@@ -49,12 +49,26 @@ namespace SGF
 
         private async void GridUpdate(List<ExtractReportDto> list)
         {
+
+            dgvReport.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            dgvReport.Columns["Date"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvReport.Columns["Type"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvReport.Columns["Description"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvReport.Columns["Category"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvReport.Columns["Value"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvReport.Columns["Date"].HeaderText = "Data".ToUpper();
+            dgvReport.Columns["Type"].HeaderText = "Tipo".ToUpper();
+            dgvReport.Columns["Description"].HeaderText = "Descrição".ToUpper();
+            dgvReport.Columns["Category"].HeaderText = "Categoria".ToUpper();
+            dgvReport.Columns["Value"].HeaderText = "Valor".ToUpper();
+
             var totalRevenue = list
-                .Where(x => x.Type == "Revenue")
+                .Where(x => x.Type == "Receita")
                 .Sum(x => x.Value);
 
             var totalExpense = list
-                .Where(x => x.Type == "Expense")
+                .Where(x => x.Type == "Despesa")
                 .Sum(x => Math.Abs(x.Value));
 
             var balance = totalRevenue - totalExpense;

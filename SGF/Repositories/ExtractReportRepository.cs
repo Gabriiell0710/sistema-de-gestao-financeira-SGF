@@ -23,7 +23,7 @@ namespace SGF.Repositories
                 .Select(r => new ExtractReportDto
                 {
                     Date = r.Date,
-                    Type = "Revenue",
+                    Type = "Receita",
                     Description = r.Description,
                     Category = r.RevenueCategory.Name,
                     Value = r.Value
@@ -36,7 +36,7 @@ namespace SGF.Repositories
                 .Select(e => new ExtractReportDto
                 {
                     Date = e.Date,
-                    Type = "Expense",
+                    Type = "Despesa",
                     Description = e.Description,
                     Category = e.ExpenseCategory.Name,
                     Value = e.Value

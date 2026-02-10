@@ -52,7 +52,7 @@ namespace SGF.Utils
         {
             container.Column(col => 
             {
-                col.Item().Text("Sistema de Gestão Financeira")
+                col.Item().Text("Sistema de Gestão Financeira - Extrato Financeiro")
                 .FontSize(18).Bold();
 
                 col.Item().Text($"Usuário: {_user.Name}");
@@ -81,6 +81,7 @@ namespace SGF.Utils
                 {
                     header.Cell().Text("Data").Bold();
                     header.Cell().Text("Tipo").Bold();
+                    header.Cell().Text("Descrição").Bold();
                     header.Cell().Text("Categoria").Bold();
                     header.Cell().Text("Valor").Bold();
                 });
@@ -97,11 +98,11 @@ namespace SGF.Utils
                 table.Cell().PaddingTop(15).AlignRight().Column(col =>
                 {
                     var totalRevenues = _data
-                    .Where(x => x.Type == "Revenue")
+                    .Where(x => x.Type == "Receita")
                     .Sum(x => x.Value);
 
                     var totalExpenses = _data
-                    .Where(x => x.Type == "Expense")
+                    .Where(x => x.Type == "Despesa")
                     .Sum (x => Math.Abs(x.Value));
 
                     var balance = totalRevenues - totalExpenses;
