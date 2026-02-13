@@ -3,6 +3,6 @@
     public class GraphsDto
     {
         public string Month { get; set; }
-        public string Total { get; set; }
+        public decimal Value { get; set; }
     }
 }
