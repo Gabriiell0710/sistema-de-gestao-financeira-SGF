@@ -154,7 +154,7 @@
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(66, 67);
             btnBack.TabIndex = 10;
-            btnBack.Text = "Voltar";
+            btnBack.Text = "     ";
             btnBack.TextAlign = ContentAlignment.BottomCenter;
             btnBack.UseVisualStyleBackColor = true;
             // 
