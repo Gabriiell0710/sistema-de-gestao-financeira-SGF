@@ -36,18 +36,18 @@
             labelHeader = new Label();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
-            tabPage3 = new TabPage();
             chartRevenues = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            tabPage2 = new TabPage();
             chartExpense = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            tabPage3 = new TabPage();
             chartComparative = new System.Windows.Forms.DataVisualization.Charting.Chart();
             btnBack = new Button();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
-            tabPage2.SuspendLayout();
-            tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)chartRevenues).BeginInit();
+            tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)chartExpense).BeginInit();
+            tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)chartComparative).BeginInit();
             SuspendLayout();
             // 
@@ -97,6 +97,17 @@
             tabPage1.Text = "Receita";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // chartRevenues
+            // 
+            chartRevenues.Dock = DockStyle.Fill;
+            chartRevenues.Location = new Point(3, 3);
+            chartRevenues.Name = "chartRevenues";
+            series1.Name = "Series1";
+            chartRevenues.Series.Add(series1);
+            chartRevenues.Size = new Size(1229, 511);
+            chartRevenues.TabIndex = 0;
+            chartRevenues.Text = "chart1";
+            // 
             // tabPage2
             // 
             tabPage2.Controls.Add(chartExpense);
@@ -107,6 +118,17 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Despesa";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // chartExpense
+            // 
+            chartExpense.Dock = DockStyle.Fill;
+            chartExpense.Location = new Point(3, 3);
+            chartExpense.Name = "chartExpense";
+            series2.Name = "Series1";
+            chartExpense.Series.Add(series2);
+            chartExpense.Size = new Size(1229, 511);
+            chartExpense.TabIndex = 1;
+            chartExpense.Text = "chart1";
             // 
             // tabPage3
             // 
@@ -119,33 +141,14 @@
             tabPage3.Text = "Comparativo";
             tabPage3.UseVisualStyleBackColor = true;
             // 
-            // chartRevenues
-            // 
-            chartRevenues.Location = new Point(0, 0);
-            chartRevenues.Name = "chartRevenues";
-            series1.Name = "Series1";
-            chartRevenues.Series.Add(series1);
-            chartRevenues.Size = new Size(1235, 521);
-            chartRevenues.TabIndex = 0;
-            chartRevenues.Text = "chart1";
-            // 
-            // chartExpense
-            // 
-            chartExpense.Location = new Point(0, -2);
-            chartExpense.Name = "chartExpense";
-            series2.Name = "Series1";
-            chartExpense.Series.Add(series2);
-            chartExpense.Size = new Size(1235, 521);
-            chartExpense.TabIndex = 1;
-            chartExpense.Text = "chart1";
-            // 
             // chartComparative
             // 
-            chartComparative.Location = new Point(0, -2);
+            chartComparative.Dock = DockStyle.Fill;
+            chartComparative.Location = new Point(3, 3);
             chartComparative.Name = "chartComparative";
             series3.Name = "Series1";
             chartComparative.Series.Add(series3);
-            chartComparative.Size = new Size(1235, 521);
+            chartComparative.Size = new Size(1229, 511);
             chartComparative.TabIndex = 2;
             chartComparative.Text = "chart1";
             // 
@@ -180,10 +183,10 @@
             Text = "Gráficos";
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
-            tabPage2.ResumeLayout(false);
-            tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)chartRevenues).EndInit();
+            tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)chartExpense).EndInit();
+            tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)chartComparative).EndInit();
             ResumeLayout(false);
             PerformLayout();

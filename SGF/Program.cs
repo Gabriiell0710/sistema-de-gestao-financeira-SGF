@@ -27,6 +27,7 @@ namespace SGF
             services.AddScoped<IRevenueRepository, RevenueRepository>();
             services.AddScoped<IExpenseRepository, ExpenseRepository>();
             services.AddScoped<IExtractReportRepository, ExtractReportRepository>();
+            services.AddScoped<IGraphsRepository, GraphsRepository>();
             //Service
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IRevenueCategoryService, RevenueCategoryService>();
@@ -41,6 +42,7 @@ namespace SGF
             services.AddScoped<RevenueAdd>();
             services.AddScoped<ExpenseAdd>();
             services.AddScoped<Report>();
+            services.AddScoped<Graphs>();
             services.AddSingleton<UserSession>();
 
             var provider = services.BuildServiceProvider();

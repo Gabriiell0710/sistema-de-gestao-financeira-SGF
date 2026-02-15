@@ -16,32 +16,53 @@ namespace SGF.Repositories
 
         public async Task<List<GraphsDto>> GetRevenues(int userId)
         {
-            var data = await _context.Revenues
+            var raw = await _context.Revenues
                 .Where(r => r.RevenueCategory.UserId == userId)
                 .GroupBy(r => new { r.Date.Year, r.Date.Month })
-                .Select(g => new GraphsDto
+                .Select(g => new 
                 {
-                    Month = $"{g.Key.Month:00}/{g.Key.Year}",
-                    Value = g.Sum(x => x.Value)
+                    g.Key.Year,
+                    g.Key.Month,
+                    Value = g.Sum(x => (double)x.Value)
                 })
-                .OrderBy(x => x.Month)
+                .OrderBy(x => x.Year)
+                .ThenBy(x => x.Month)
                 .ToListAsync();
+            
+            var data = raw.Select(x => new GraphsDto
+            {
+                Month = $"{x.Month:00}/{x.Year}",
+                Value = (decimal)x.Value
+            })
+                .ToList();
+
             return data;
+
         }
 
 
         public async Task<List<GraphsDto>> GetExpenses(int userId)
         {
-            var data = await _context.Expenses
+            var raw = await _context.Expenses
                 .Where(e => e.ExpenseCategory.UserId == userId)
                 .GroupBy(e => new { e.Date.Year, e.Date.Month })
-                .Select(g => new GraphsDto
+                .Select(g => new 
                 {
-                    Month = $"{g.Key.Month:00}/{g.Key.Year}",
-                    Value = g.Sum(x => x.Value)
+                    g.Key.Year,
+                    g.Key.Month,
+                    Value = g.Sum(x => (double)x.Value)
                 })
-                .OrderBy(x => x.Month)
+                .OrderBy(x => x.Year)
+                .ThenBy(x => x.Month)
                 .ToListAsync();
+
+            var data = raw.Select(x => new GraphsDto
+            {
+                Month = $"{x.Month:00}/{x.Year}",
+                Value = (decimal)x.Value
+            })
+                .ToList();
+
             return data;
         }
 
