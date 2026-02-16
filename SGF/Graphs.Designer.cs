@@ -102,6 +102,7 @@
             chartRevenues.Dock = DockStyle.Fill;
             chartRevenues.Location = new Point(3, 3);
             chartRevenues.Name = "chartRevenues";
+            series1.Color = Color.Green;
             series1.Name = "Series1";
             chartRevenues.Series.Add(series1);
             chartRevenues.Size = new Size(1229, 511);
