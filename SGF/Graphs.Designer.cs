@@ -41,7 +41,9 @@
             chartExpense = new System.Windows.Forms.DataVisualization.Charting.Chart();
             tabPage3 = new TabPage();
             chartComparative = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            dtpFilter = new DateTimePicker();
             btnBack = new Button();
+            label1 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)chartRevenues).BeginInit();
@@ -153,6 +155,20 @@
             chartComparative.TabIndex = 2;
             chartComparative.Text = "chart1";
             // 
+            // dtpFilter
+            // 
+            dtpFilter.CalendarFont = new Font("Roboto", 10F);
+            dtpFilter.CalendarMonthBackground = SystemColors.MenuHighlight;
+            dtpFilter.CustomFormat = "MM/yyyy";
+            dtpFilter.Font = new Font("Roboto", 10F);
+            dtpFilter.Format = DateTimePickerFormat.Custom;
+            dtpFilter.Location = new Point(1110, 32);
+            dtpFilter.Name = "dtpFilter";
+            dtpFilter.ShowUpDown = true;
+            dtpFilter.Size = new Size(79, 24);
+            dtpFilter.TabIndex = 12;
+            dtpFilter.ValueChanged += this.dtpFilter_ValueChanged;
+            // 
             // btnBack
             // 
             btnBack.Cursor = Cursors.Hand;
@@ -166,6 +182,18 @@
             btnBack.TextAlign = ContentAlignment.BottomCenter;
             btnBack.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            label1.BackColor = SystemColors.GrayText;
+            label1.Font = new Font("Roboto", 12F, FontStyle.Bold);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(1029, 32);
+            label1.Name = "label1";
+            label1.Size = new Size(81, 23);
+            label1.TabIndex = 13;
+            label1.Text = "Período";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // Graphs
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -173,6 +201,8 @@
             BackgroundImage = Properties.Resources.background_padrao;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1241, 602);
+            Controls.Add(label1);
+            Controls.Add(dtpFilter);
             Controls.Add(btnBack);
             Controls.Add(tabControl1);
             Controls.Add(labelHeader);
@@ -205,5 +235,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartExpense;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartComparative;
         private Button btnBack;
+        private DateTimePicker dtpFilter;
+        private Label label1;
     }
 }

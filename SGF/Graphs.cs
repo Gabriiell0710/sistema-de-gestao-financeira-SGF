@@ -19,7 +19,7 @@ namespace SGF
         private readonly IGraphsRepository _repository;
         private UserModel _loggedUser;
 
-            public Graphs(IGraphsRepository repository, UserSession user)
+        public Graphs(IGraphsRepository repository, UserSession user)
         {
             _repository = repository;
             _loggedUser = user.User;
@@ -34,7 +34,7 @@ namespace SGF
         private async void Graphs_Load(object sender, EventArgs e)
         {
 
-
+            await LoadGraphs();
             LoadRevenues();
             LoadExpenses();
             LoadCompare();
@@ -42,7 +42,9 @@ namespace SGF
 
         private async void LoadRevenues()
         {
-            var data = await _repository.GetRevenues(_loggedUser.Id);
+            var year = dtpFilter.Value.Year;
+            var month = dtpFilter.Value.Month;
+            var data = await _repository.GetRevenues(_loggedUser.Id, year, month);
 
             chartRevenues.Series.Clear();
             chartRevenues.ChartAreas.Clear();
@@ -67,15 +69,19 @@ namespace SGF
             }
         }
 
+
         private async void LoadExpenses()
         {
-            var data = await _repository.GetExpenses(_loggedUser.Id);
+            var year = dtpFilter.Value.Year;
+            var month = dtpFilter.Value.Month;
+
+            var data = await _repository.GetExpenses(_loggedUser.Id, year, month);
 
             chartExpense.Series.Clear();
             chartExpense.Legends.Clear();
             chartExpense.ChartAreas.Clear();
-            
-            chartExpense.Legends.Add( new Legend());
+
+            chartExpense.Legends.Add(new Legend());
             chartExpense.ChartAreas.Add(new ChartArea("Area1"));
             chartExpense.BackColor = Color.WhiteSmoke;
             chartExpense.ChartAreas["Area1"].BackColor = Color.White;
@@ -96,7 +102,10 @@ namespace SGF
 
         private async void LoadCompare()
         {
-            var (revenues, expenses) = await _repository.GetCompare(_loggedUser.Id);
+            var year = dtpFilter.Value.Year;
+            var month = dtpFilter.Value.Month;
+
+            var (revenues, expenses) = await _repository.GetCompare(_loggedUser.Id, year, month);
 
             chartComparative.Series.Clear();
             chartComparative.ChartAreas.Clear();
@@ -134,5 +143,26 @@ namespace SGF
         {
             this.Close();
         }
+
+        private async void dtpFilter_ValueChanged(object sender, EventArgs e)
+        {
+            await LoadGraphs();
+           // MessageBox.Show("Atualizou!");
+        }
+
+        private async Task LoadGraphs()
+        {
+            int year = dtpFilter.Value.Year;
+            int month = dtpFilter.Value.Month;
+
+            var revenues = await _repository.GetRevenues(_loggedUser.Id, year, month);
+            var expenses = await _repository.GetExpenses(_loggedUser.Id, year, month);
+
+            LoadRevenues();
+            LoadExpenses();
+            LoadCompare();
+        }
+
+       
     }
 }
