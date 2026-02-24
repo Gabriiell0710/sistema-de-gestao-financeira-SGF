@@ -130,6 +130,9 @@
   <data name="add_despesa_75x75" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add_despesa_75x75.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cadastro_despesa_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cadastro_despesa_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="add_receita_75x75" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add_receita_75x75.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,7 +166,7 @@
   <data name="cadastro_receita_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cadastro_receita_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cadastro_despesa_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cadastro_despesa_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="senha" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\senha.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -27,6 +27,7 @@ namespace SGF
             InitializeComponent();
 
             labelUser.Text = $"Usuário: {_user.User.Name}";
+            labelCurrentDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
             btnRegisterRevenue.Click += BtnRegisterRevenue_Click;
             btnRegisterExpense.Click += BtnRegisterExpense_Click;

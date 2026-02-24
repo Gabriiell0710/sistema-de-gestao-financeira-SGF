@@ -59,11 +59,11 @@
             labelMenu.BackColor = Color.Transparent;
             labelMenu.Font = new Font("Roboto", 20F, FontStyle.Bold);
             labelMenu.ForeColor = SystemColors.Control;
-            labelMenu.Location = new Point(26, 21);
+            labelMenu.Location = new Point(65, 21);
             labelMenu.Name = "labelMenu";
-            labelMenu.Size = new Size(252, 33);
+            labelMenu.Size = new Size(121, 33);
             labelMenu.TabIndex = 2;
-            labelMenu.Text = "Cadastro Despesa";
+            labelMenu.Text = "Gráficos";
             // 
             // labelHeader
             // 
@@ -167,7 +167,7 @@
             dtpFilter.ShowUpDown = true;
             dtpFilter.Size = new Size(79, 24);
             dtpFilter.TabIndex = 12;
-            dtpFilter.ValueChanged += this.dtpFilter_ValueChanged;
+            dtpFilter.ValueChanged += dtpFilter_ValueChanged;
             // 
             // btnBack
             // 
@@ -178,7 +178,7 @@
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(66, 67);
             btnBack.TabIndex = 11;
-            btnBack.Text = "     ";
+            btnBack.Text = "Voltar";
             btnBack.TextAlign = ContentAlignment.BottomCenter;
             btnBack.UseVisualStyleBackColor = true;
             // 

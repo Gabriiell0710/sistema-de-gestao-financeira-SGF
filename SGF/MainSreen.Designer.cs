@@ -41,6 +41,7 @@
             btnExit = new Button();
             labelUser = new Label();
             labelCurrentDate = new Label();
+            label1 = new Label();
             SuspendLayout();
             // 
             // labelMenu
@@ -211,11 +212,23 @@
             labelCurrentDate.BackColor = Color.Transparent;
             labelCurrentDate.Font = new Font("Roboto", 12F, FontStyle.Bold);
             labelCurrentDate.ForeColor = SystemColors.Control;
-            labelCurrentDate.Location = new Point(983, 66);
+            labelCurrentDate.Location = new Point(1098, 69);
             labelCurrentDate.Name = "labelCurrentDate";
-            labelCurrentDate.Size = new Size(94, 19);
+            labelCurrentDate.Size = new Size(105, 19);
             labelCurrentDate.TabIndex = 11;
-            labelCurrentDate.Text = "Data Atual";
+            labelCurrentDate.Text = "00/00/0000";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Roboto", 12F, FontStyle.Bold);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(995, 69);
+            label1.Name = "label1";
+            label1.Size = new Size(104, 19);
+            label1.TabIndex = 12;
+            label1.Text = "Data Atual :";
             // 
             // MainSreen
             // 
@@ -224,6 +237,7 @@
             BackgroundImage = Properties.Resources.background_mainform;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1241, 602);
+            Controls.Add(label1);
             Controls.Add(labelCurrentDate);
             Controls.Add(labelUser);
             Controls.Add(btnExit);
@@ -240,7 +254,7 @@
             MaximizeBox = false;
             Name = "MainSreen";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "MainSreen";
+            Text = "Menu Principal";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -259,5 +273,6 @@
         private Button btnExit;
         private Label labelUser;
         private Label labelCurrentDate;
+        private Label label1;
     }
 }

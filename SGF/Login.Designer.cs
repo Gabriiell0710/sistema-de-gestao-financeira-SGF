@@ -77,7 +77,7 @@
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.BackgroundImage = Properties.Resources.usuario;
+            pictureBox2.BackgroundImage = Properties.Resources.senha;
             pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox2.Location = new Point(107, 398);
             pictureBox2.Name = "pictureBox2";
