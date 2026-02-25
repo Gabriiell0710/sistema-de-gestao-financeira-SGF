@@ -93,6 +93,16 @@ namespace SGF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap background_help {
+            get {
+                object obj = ResourceManager.GetObject("background_help", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap background_mainform {
             get {
                 object obj = ResourceManager.GetObject("background_mainform", resourceCulture);
@@ -206,6 +216,16 @@ namespace SGF.Properties {
         internal static System.Drawing.Bitmap senha {
             get {
                 object obj = ResourceManager.GetObject("senha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sistema {
+            get {
+                object obj = ResourceManager.GetObject("sistema", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -43,6 +43,7 @@ namespace SGF
             services.AddScoped<ExpenseAdd>();
             services.AddScoped<Report>();
             services.AddScoped<Graphs>();
+            services.AddScoped<Help>();
             services.AddSingleton<UserSession>();
 
             var provider = services.BuildServiceProvider();

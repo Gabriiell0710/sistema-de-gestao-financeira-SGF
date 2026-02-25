@@ -51,7 +51,7 @@
             labelMenu.ForeColor = SystemColors.Control;
             labelMenu.Location = new Point(26, 21);
             labelMenu.Name = "labelMenu";
-            labelMenu.Size = new Size(252, 33);
+            labelMenu.Size = new Size(236, 33);
             labelMenu.TabIndex = 1;
             labelMenu.Text = "Cadastro Despesa";
             // 
@@ -63,7 +63,7 @@
             labelHeader.ForeColor = SystemColors.ControlText;
             labelHeader.Location = new Point(436, 10);
             labelHeader.Name = "labelHeader";
-            labelHeader.Size = new Size(402, 33);
+            labelHeader.Size = new Size(376, 33);
             labelHeader.TabIndex = 2;
             labelHeader.Text = "Sistema de Gestão Financeira";
             // 
@@ -75,7 +75,7 @@
             labelExpense.ForeColor = SystemColors.ControlText;
             labelExpense.Location = new Point(134, 166);
             labelExpense.Name = "labelExpense";
-            labelExpense.Size = new Size(233, 29);
+            labelExpense.Size = new Size(216, 29);
             labelExpense.TabIndex = 3;
             labelExpense.Text = "Cadastrar Despesa";
             // 
